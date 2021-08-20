@@ -58,9 +58,17 @@ const FORM_VALIDATION = Yup.object().shape({
 const App = () => {
   const classes = useStyles();
   const handleSubmit = (fiels) => {
-    axios.post("https://611fba57988f860017ac43d0.mockapi.io/App/success/data", {
-      body: { ...fiels },
-    });
+    const result = axios.post(
+      "https://611fba57988f860017ac43d0.mockapi.io/App/success/data",
+      {
+        body: { ...fiels },
+      }
+    );
+    console.log(result);
+    alert(
+      "The submit will hit mock api.Result can be viewed on console",
+      ...fiels
+    );
   };
 
   return (

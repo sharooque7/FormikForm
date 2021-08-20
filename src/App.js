@@ -64,11 +64,12 @@ const App = () => {
         body: { ...fiels },
       }
     );
-    console.log(result);
-    alert(
-      "The submit will hit mock api.Result can be viewed on console",
-      ...fiels
-    );
+    result
+      .then((res) => {
+        console.log(res.data.body);
+        alert("The submit will hit mock api.Result can be viewed on console");
+      })
+      .catch((err) => console.log("err"));
   };
 
   return (
